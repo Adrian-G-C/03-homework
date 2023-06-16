@@ -11,11 +11,11 @@ function writePassword() {
 
 // Generate a random password
 function generatePassword() {
-  var length = prompt("Enter the length of the password (between 8 and 128 characters):");
+  var length = prompt("Enter the length of the password (between 8 and 35 characters):");
 
   // Validate the length input
-  if (isNaN(length) || length < 8 || length > 128) {
-    alert("Invalid length! Please enter a number between 8 and 128.");
+  if (isNaN(length) || length < 8 || length > 35) {
+    alert("Invalid length! Please enter a number between 8 and 35.");
     return "";
   }
 
@@ -24,7 +24,6 @@ function generatePassword() {
   var numbers = confirm("Include numbers?");
   var specialChars = confirm("Include special characters?");
 
-  // Define character sets
   var lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numberChars = "0123456789";
@@ -33,7 +32,6 @@ function generatePassword() {
   var charSet = "";
   var password = "";
 
-  // Build character set based on user preferences
   if (lowercase) {
     charSet += lowercaseChars;
   }
@@ -56,5 +54,5 @@ function generatePassword() {
   return password;
 }
 
-// Add event listener to generate button
+// Add event listener
 generateBtn.addEventListener("click", writePassword);
